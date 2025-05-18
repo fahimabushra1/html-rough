@@ -9,7 +9,9 @@
 <body>
  <main>
     <h1>1. accesskey</h1>
-
+    <label for="email">Email</label>
+    <input id="email" type="email" accesskey="m" placeholder="example@email.com">
+    <p>press <code><b>alt+m</b></code> to focus input area.</p>
     <h1 class="attribute-head">2.inputmode attribute</h1>
     <form class="inputmode-attribute" action="myForm">
       <label for="name">name</label>
@@ -29,6 +31,60 @@
       <label for="none">none</label>
       <input type="text" inputmode="none" placeholder="Draw or select emoji">
     </form>
+    <h1>3. autocapitalize</h1>
+    <p>For Sentences</p>
+    <textarea name="review" placeholder="Write your review" autocapitalize="sentences"></textarea>
+    <p>For Words</p>
+    <input type="text" name="fullName" placeholder="Full Name" autocapitalize="words">
+    <p>For Characters</p>
+    <input type="text" name="coupon" placeholder="Enter Code" autocapitalize="characters">
+    <p>No Capitalization</p>
+    <input type="search" name="search" placeholder="Search..." autocapitalize="off">
+    <h1>4. contenteditable</h1>
+    <p contenteditable="true">
+       You can click and edit this text!
+    </p>
+    <h1>5. data-*</h1>
+  <p>Storing Product Info</p>
+  <div class="product" data-id="101" data-price="650" data-category="tshirt">
+     <h3>Basic T-Shirt</h3>
+     <button onclick="addToCart(this)">Add to Cart</button>
+  </div>
+  <p>Toggle Sections (Accordion)</p>
+   <button data-target="#faq1" onclick="toggleAnswer(this)">Q: What is this?</button>
+   <div id="faq1" style="display: none;">Answer: It’s a T-shirt!</div>
+  <p>Multilingual Content</p>
+  <p data-lang-en="Hello" data-lang-bn="হ্যালো" data-lang-jp="こんにちは">Hello</p>
+  <p>Image Gallery Thumbnails</p>
+<img src="thumb.jpg" data-full="large.jpg" onclick="previewImage(this)">
+<p>Quiz Questions</p>
+<button data-correct="true" onclick="checkAnswer(this)">Option A</button>
+<button data-correct="false" onclick="checkAnswer(this)">Option B</button>
+<p>Tracking User Actions (Analytics)</p>
+<button data-action="signup" onclick="track(this)">Sign Up</button>
+<button data-action="share" onclick="track(this)">Share</button>
+<p>Dynamic Form Field Rules</p>
+<input type="text" data-required="true" data-maxlength="10">
+<p>Carousel/Slider Dots</p>
+<div class="dot" data-slide="0"></div>
+<div class="dot" data-slide="1"></div>
+    <h1>6. dir</h1>
+    <h1>7.draggable</h1>
+    <h1>8. enterkeyhint</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
+    <h1>3. autocapitalize</h1>
  </main>
 </body>
 </html>
