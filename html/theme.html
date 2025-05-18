@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Theme Switcher Example</title>
+
+  <!-- Default theme -->
+  <link rel="stylesheet" href="light.css" title="Light" />
+
+  <!-- Alternate theme -->
+  <link rel="alternate stylesheet" href="dark.css" title="Dark" />
+
+  <script>
+    function setTheme(title) {
+      const links = document.getElementsByTagName("link");
+
+      for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+        if (link.rel.includes("stylesheet") && link.title) {
+          link.disabled = (link.title !== title);
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Hello, Fahima!</h1>
+  <p>Click a button to switch theme:</p>
+
+  <button onclick="setTheme('Light')">Light Theme</button>
+  <button onclick="setTheme('Dark')">Dark Theme</button>
+</body>
+</html>

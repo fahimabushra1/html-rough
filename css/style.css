@@ -1,0 +1,54 @@
+.body-part{
+    position: relative;
+    margin: 10px;
+    padding: 40px;
+}
+.heading-style{
+    color: red;
+    border: 30px solid transparent;
+    border-image: url('https://www.metroparks.net/wp-content/uploads/2017/06/1080p_HBK_autumn-morning_GI.jpg') 10 fill round;   
+}
+.heading-style1{
+    color: red;
+    border: 30px solid transparent;
+    border-image: url('https://www.metroparks.net/wp-content/uploads/2017/06/1080p_HBK_autumn-morning_GI.jpg') 30 fill space;   
+}
+.heading-style2{
+    color: red;
+    border: 30px solid transparent;
+    border-image: url('https://www.metroparks.net/wp-content/uploads/2017/06/1080p_HBK_autumn-morning_GI.jpg') 30 fill repeat;   
+}
+.heading-style3{
+    color: red;
+    border: 30px solid transparent;
+    border-image: url('https://www.metroparks.net/wp-content/uploads/2017/06/1080p_HBK_autumn-morning_GI.jpg') 30 fill stretch;   
+}
+.border-image{
+    border-inline-start: 2px solid red; /* Instead of border-left */
+    border-block-end: 3px solid blue;   /* Instead of border-bottom */
+
+}
+.box::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        border: 10px dashed gold;
+        z-index: -1;
+      }
+      
+.box::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        border: 2px solid red;
+        z-index: 1;
+      }
+ .entrance-btn {
+        border: -4px solid blue;
+        /* transition: border 0.5s ease;  */
+      }
+.entrance-btn:hover {
+        border: 2px dashed green;
+      }
+      
+      
