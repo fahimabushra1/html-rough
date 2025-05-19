@@ -101,3 +101,84 @@ if (isAdmin) {
     document.getElementById("step1").hidden = true;
     document.getElementById("step2").hidden = false;
   }
+// modal using inert:
+   const modal = document.getElementById('modal');
+    const content = document.getElementById('content');
+    const backdrop = document.getElementById('backdrop');
+
+    function openModal() {
+      modal.showModal();
+      content.inert = true;
+      backdrop.classList.add('active');
+    }
+
+    function closeModal() {
+      modal.close();
+      content.inert = false;
+      backdrop.classList.remove('active');
+    }
+
+//  Extended input fields with validation:
+    class EmailInput extends HTMLInputElement {
+  connectedCallback() {
+    this.addEventListener('blur', () => {
+      if (!this.value.includes('@')) {
+        this.setCustomValidity('Invalid email!');
+      } else {
+        this.setCustomValidity('');
+      }
+    });
+  }
+}
+
+customElements.define('email-input', EmailInput, { extends: 'input' });
+
+// fancy btn:
+class FancyButton extends HTMLButtonElement {
+  connectedCallback() {
+    this.style.color = 'red';
+    this.addEventListener('click', () => {
+      alert('Fancy Button Clicked!');
+    });
+  }
+}
+// part attribute:
+customElements.define('fancy-button', FancyButton, { extends: 'button' });
+
+
+ class DialogBox extends HTMLElement {
+    constructor() {
+      super();
+      const shadow = this.attachShadow({ mode: 'open' });
+
+      shadow.innerHTML = `
+        <style>
+          :host {
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            font-family: sans-serif;
+          }
+        </style>
+        <header part="header">Dialog Title</header>
+        <section part="body">Dialog Content</section>
+        <footer part="footer">Close</footer>
+      `;
+    }
+  }
+// role attribute:
+  customElements.define('dialog-box', DialogBox);
+
+
+    function submitForm() {
+    alert('Form submitted!');
+  }
+
+  function handleKey(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();  // Prevent scrolling on Space
+      submitForm();
+    }
+  }

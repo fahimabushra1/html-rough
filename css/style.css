@@ -1,3 +1,9 @@
+p:lang(bn) {
+  font-family: "Noto Sans Bengali", sans-serif;
+}
+p:lang(fr) {
+  font-style: italic;
+}
 
 .attribute-head{
     color: blue; 
@@ -13,5 +19,26 @@
     flex-direction: column;
   }
 }  
+
+/* part: */
+
+  dialog-box::part(header) {
+    background: navy;
+    color: white;
+    padding: 10px;
+  }
+
+  dialog-box::part(body) {
+    padding: 20px;
+    background: #f9f9f9;
+  }
+
+  dialog-box::part(footer) {
+    text-align: right;
+    padding: 10px;
+    background: #eee;
+  }
+
+
       
       

@@ -107,7 +107,7 @@
         Drag me around!
      </div>
      <h4>Shopping Cart (Drag product to cart)</h4>
-     <div draggable="true" id="product">🍰 Chocolate Cake</div>
+     <div draggable="true" id="product">Chocolate Cake</div>
 <div id="cart" style="border: 2px solid black; padding: 20px;">🛒 Cart</div>
 <p>can be dragged the image into a drop zone or even another program (like Photoshop or your desktop).</p>
 <img src="../../image/burgerWithoutBG1.png" alt="burger" draggable="true" id="burgerImg" width="100" />
@@ -156,33 +156,122 @@
   </div>
 </form>
     <h1>10. inert</h1>
-    <body>
-  <main id="content" inert>
+    <div id="content">
     <h1>Welcome to My Site</h1>
-    <p>This content will be disabled when modal is open.</p>
-  </main>
+    <p>This content becomes inactive when the modal opens.</p>
+    <button onclick="openModal()">Open Modal</button>
+  </div>
 
-  <dialog open>
+  <div id="backdrop" onclick="closeModal()"></div>
+
+  <dialog id="modal">
     <h2>Subscribe Now</h2>
     <form>
       <input type="email" placeholder="Your email" />
-      <button>Submit</button>
+      <button type="submit">Submit</button>
     </form>
+    <button onclick="closeModal()">Close</button>
   </dialog>
-</body>
 
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
+    <h1>11. is</h1>
+    <h4>Extended input fields with validation</h4>
+    <input is="email-input" type="email">
+    <h4>fancy btn</h4>
+    <button is="fancy-button">Click me</button>
+    <h1>12. itemid, itemprop, itemref, itemscope, itemtype </h1>
+    <h4> Describe a T-shirt product</h4>
+    <div itemscope itemtype="https://schema.org/Product" itemid="https://example.com/products/tshirt-123">
+  <h2 itemprop="name">Cotton T-Shirt</h2>
+  <p itemprop="description">100% Cotton, lightweight and breathable.</p>
+  <span itemprop="brand">SiamWear</span>
+  <span itemprop="priceCurrency" content="BDT"></span>
+  <span itemprop="price" content="650">৳650</span>
+  <link itemprop="availability" href="https://schema.org/InStock" /> In stock
+</div>
+<h4>Person Example (About Me Page)</h4>
+<div itemscope itemtype="https://schema.org/Person" itemid="https://example.com/about/fahima">
+  <h1 itemprop="name">Fahima</h1>
+  <span itemprop="jobTitle">Frontend Developer</span>
+  <span itemprop="email">fahima@example.com</span>
+</div>
+<h4>Describe a blog article</h4>
+<article itemscope itemtype="https://schema.org/BlogPosting" itemref="extra-meta">
+  <h1 itemprop="headline">How to Start a Clothing Brand in Bangladesh</h1>
+  <p itemprop="articleBody">Starting a clothing brand involves product selection, marketing, and budgeting...</p>
+</article>
+
+<!-- This section is placed somewhere else in the layout -->
+<div id="extra-meta">
+  <span itemprop="author">Fahima</span>
+  <time itemprop="datePublished" datetime="2025-03-24">March 24, 2025</time>
+</div>
+    <h1>13.lang</h1>
+    <p lang="es">¡Hola! ¿Cómo estás?</p>
+    <p lang="de">Guten Morgen!</p>
+    <p lang="bn">হ্যালো, আপনি কেমন আছেন?</p>
+    <p>
+      She said <q lang="fr">Je t’aime</q> and smiled.
+    </p>
+
+    <h1>14. part</h1>
+    <dialog-box></dialog-box>
+    <h1>15. popover</h1>
+    <h4> Tooltip or Info Box</h4>
+    <button popovertarget="info">Info</button>
+
+<div id="info" popover>
+  This is additional information.
+</div>
+<h4>Login or Form Modal</h4>
+<button popovertarget="loginPopup">Login</button>
+
+<div id="loginPopup" popover>
+  <form>
+    <label>Email: <input type="email" /></label><br>
+    <label>Password: <input type="password" /></label><br>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+    <h1>16. role</h1>
+    <div role="alert">
+  Your session has expired. Please log in again.
+</div>
+<div role="button" tabindex="0" onclick="submitForm()" onkeydown="handleKey(event)">Submit</div>
+
+    <h1>17.spellcheck</h1>
+    <textarea spellcheck="true"></textarea>
+
+    <h1>18. autocomplete</h1>
+    <input type="email" autocomplete="email">
+
+    <h1>19. list</h1>
+    <input list="colors" name="color-choice">
+<datalist id="colors">
+  <option value="Red">
+  <option value="Green">
+  <option value="Blue">
+</datalist>
+    <h1>20. virtualKeyboardPolicy</h1>
+    <p>It's an attribute you can set on input elements (like input, textarea or contenteditable elements).It hints the browser about how to manage the virtual keyboard's appearance when the element gains focus.It is currently experimental and not widely supported across all browsers.</p>
+    <input type="text" virtualKeyboardPolicy="auto" placeholder="Type your name">
+<input type="text" virtualKeyboardPolicy="manual" placeholder="Tap here, keyboard won't appear automatically">
+<textarea virtualKeyboardPolicy="auto-accept" placeholder="Start typing immediately"></textarea>
+
+    <h1>21.tabindex</h1>
+    <p>The tabindex attribute is very useful for managing keyboard navigation — especially for improving accessibility (for users who rely on the keyboard instead of a mouse).</p>
+    <ul>
+  <li tabindex="0">Home</li>
+  <li tabindex="0">About</li>
+  <li tabindex="0">Contact</li>
+</ul>
+<div role="button" tabindex="0">Custom Button</div>
+
+    <h1>22. translate</h1>
+    <p>The translate attribute in HTML is used to control whether the content of an element should be translated when the page is viewed in a browser or tool with automatic translation, like Google Translate or Microsoft Edge.</p>
+    <element translate="yes">Translatable content</element>
+<element translate="no">Non-translatable content</element>
+
  </main>
  <script src="/js/index.js"></script>
 </body>
