@@ -135,8 +135,42 @@
 <input type="text" placeholder="Write a subject..." enterkeyhint="next">
 <textarea placeholder="Write your email..." enterkeyhint="send"></textarea>
 <p>Helps users go from subject to body, then send the message directly from mobile keyboard.</p>
-    <h1>3. autocapitalize</h1>
-    <h1>3. autocapitalize</h1>
+    <h1>9.hidden</h1>
+    <p id="thankYouMsg" hidden>Thank you for your submission!</p>  
+    <button onclick="showMessage()">Submit</button>
+    <h4>Hiding Admin-Only Content</h4>
+    <div id="adminPanel" hidden>
+  <h6>Admin Controls</h6>
+  <button>Delete User</button>
+</div>
+<h4>Multi-Step Form</h4>
+<form>
+  <div id="step1">
+    <label>Name: <input type="text"></label>
+    <button type="button" onclick="next()">Next</button>
+  </div>
+
+  <div id="step2" hidden>
+    <label>Email: <input type="email"></label>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+    <h1>10. inert</h1>
+    <body>
+  <main id="content" inert>
+    <h1>Welcome to My Site</h1>
+    <p>This content will be disabled when modal is open.</p>
+  </main>
+
+  <dialog open>
+    <h2>Subscribe Now</h2>
+    <form>
+      <input type="email" placeholder="Your email" />
+      <button>Submit</button>
+    </form>
+  </dialog>
+</body>
+
     <h1>3. autocapitalize</h1>
     <h1>3. autocapitalize</h1>
     <h1>3. autocapitalize</h1>

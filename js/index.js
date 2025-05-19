@@ -52,7 +52,7 @@ document.querySelectorAll('.dot').forEach(dot => {
     goToSlide(index);
   });
 });
-
+// drag and drop:
 const dragElement = document.getElementById("dragMe");
 
   dragElement.addEventListener("dragstart", function(event) {
@@ -86,3 +86,18 @@ document.getElementById("cart").addEventListener("drop", e => {
   const product = document.getElementById(id);
   e.target.appendChild(product);
 });
+// Temporarily Hide a "Thank You" Message:
+  function showMessage() {
+    document.getElementById("thankYouMsg").hidden = false;
+  }
+
+  // Simulate admin login
+const isAdmin = true;
+if (isAdmin) {
+  document.getElementById("adminPanel").hidden = false;
+}
+// Multi-Step Form:
+  function next() {
+    document.getElementById("step1").hidden = true;
+    document.getElementById("step2").hidden = false;
+  }
