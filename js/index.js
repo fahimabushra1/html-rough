@@ -52,3 +52,37 @@ document.querySelectorAll('.dot').forEach(dot => {
     goToSlide(index);
   });
 });
+
+const dragElement = document.getElementById("dragMe");
+
+  dragElement.addEventListener("dragstart", function(event) {
+    event.dataTransfer.setData("text", event.target.id);
+  });
+
+  document.addEventListener("dragover", function(event) {
+    event.preventDefault(); // Needed to allow dropping
+  });
+
+  document.addEventListener("drop", function(event) {
+    event.preventDefault();
+    const data = event.dataTransfer.getData("text");
+    const draggedElement = document.getElementById(data);
+    draggedElement.style.position = "absolute";
+    draggedElement.style.left = event.clientX + "px";
+    draggedElement.style.top = event.clientY + "px";
+  });
+// Shopping Cart (Drag product to cart):
+  document.getElementById("product").addEventListener("dragstart", e => {
+  e.dataTransfer.setData("text", e.target.id);
+});
+
+document.getElementById("cart").addEventListener("dragover", e => {
+  e.preventDefault();
+});
+
+document.getElementById("cart").addEventListener("drop", e => {
+  e.preventDefault();
+  const id = e.dataTransfer.getData("text");
+  const product = document.getElementById(id);
+  e.target.appendChild(product);
+});

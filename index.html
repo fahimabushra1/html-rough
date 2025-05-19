@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,32 +45,96 @@
        You can click and edit this text!
     </p>
     <h1>5. data-*</h1>
-  <p>Storing Product Info</p>
+  <p>1-Storing Product Info</p>
   <div class="product" data-id="101" data-price="650" data-category="tshirt">
      <h3>Basic T-Shirt</h3>
      <button onclick="addToCart(this)">Add to Cart</button>
   </div>
-  <p>Toggle Sections (Accordion)</p>
+  <p>2-Toggle Sections (Accordion)</p>
    <button data-target="#faq1" onclick="toggleAnswer(this)">Q: What is this?</button>
    <div id="faq1" style="display: none;">Answer: It’s a T-shirt!</div>
-  <p>Multilingual Content</p>
-  <p data-lang-en="Hello" data-lang-bn="হ্যালো" data-lang-jp="こんにちは">Hello</p>
-  <p>Image Gallery Thumbnails</p>
-<img src="thumb.jpg" data-full="large.jpg" onclick="previewImage(this)">
-<p>Quiz Questions</p>
+  <p>3-Multilingual Content</p>
+  <p data-lang-en="Hello" data-lang-bn="হ্যালো" data-lang-jp="こんにちは">Hello, こんにちは,হ্যালো</p>
+  <p>4-Image Gallery Thumbnails</p>
+<img src="../../image/sofa.png" data-full="large.jpg" onclick="previewImage(this)">
+<p>5-Quiz Questions</p>
 <button data-correct="true" onclick="checkAnswer(this)">Option A</button>
 <button data-correct="false" onclick="checkAnswer(this)">Option B</button>
-<p>Tracking User Actions (Analytics)</p>
+<p>6-Tracking User Actions (Analytics)</p>
 <button data-action="signup" onclick="track(this)">Sign Up</button>
 <button data-action="share" onclick="track(this)">Share</button>
-<p>Dynamic Form Field Rules</p>
+<p>7-Dynamic Form Field Rules</p>
 <input type="text" data-required="true" data-maxlength="10">
-<p>Carousel/Slider Dots</p>
+<p>8-Carousel/Slider Dots</p>
 <div class="dot" data-slide="0"></div>
 <div class="dot" data-slide="1"></div>
     <h1>6. dir</h1>
+ <h4> 1.Multilingual Website Header</h4>
+<h1 dir="ltr">Welcome to My Website</h1>
+<h1 dir="rtl">مرحبا بكم في موقعي</h1>
+<h4>2.Chat App Showing User Messages in Different Languages</h4>
+<div class="message" dir="ltr">Hi, how are you?</div>
+<div class="message" dir="rtl">كيف حالك؟</div>
+<h4>3.Form Input Fields with Mixed Direction</h4>
+<label>Name:</label>
+<input type="text" dir="ltr">
+<label>الاسم:</label>
+<input type="text" dir="rtl">
+<h4> 4.Auto Detection for Dynamic Content</h4>
+<p dir="auto">Hello</p>
+<p dir="auto">שלום</p> <!-- Hebrew -->
+<h4>5.Emails or Comments in Multilingual UI</h4>
+<div class="comment" dir="auto">
+  שלום, זה נראה נהדר!
+</div>
+<div class="comment" dir="auto">
+  That looks great!
+</div>
+<h4>6.User Profile Info with Bi-directional Text</h4>
+<p dir="ltr">Name: يوسف</p>
+<p dir="rtl">الاسم: John</p>
+<h4>7.E-Commerce Product Descriptions</h4>
+<div dir="ltr">
+  <h2>Handmade Bracelet</h2>
+  <p>Elegant and simple for everyday wear.</p>
+</div>
+<div dir="rtl">
+  <h2>سوار يدوي الصنع</h2>
+  <p>أنيق وبسيط للارتداء اليومي.</p>
+</div>
     <h1>7.draggable</h1>
+     <div id="dragMe" draggable="true">
+        Drag me around!
+     </div>
+     <h4>Shopping Cart (Drag product to cart)</h4>
+     <div draggable="true" id="product">🍰 Chocolate Cake</div>
+<div id="cart" style="border: 2px solid black; padding: 20px;">🛒 Cart</div>
+<p>can be dragged the image into a drop zone or even another program (like Photoshop or your desktop).</p>
+<img src="../../image/burgerWithoutBG1.png" alt="burger" draggable="true" id="burgerImg" width="100" />
+<h4>Drag-and-Drop Builder (like Notion or Canva):</h4>
+<div class="block" draggable="true">Text Block</div>
     <h1>8. enterkeyhint</h1>
+<h4>1.Chat App Input</h4>
+<input type="text" placeholder="Type a message..." enterkeyhint="send">
+<p>Changes enter key to "Send" — very common in messaging apps like WhatsApp, Messenger.</p>
+<h4> 2.Search Box</h4>
+<input type="search" placeholder="Search products..." enterkeyhint="search">
+<p>Shows a search icon or text — used in e-commerce sites or apps.</p>
+<h4>3.Multi-Line Comment Box</h4>
+<textarea placeholder="Write your comment..." enterkeyhint="enter"></textarea>
+<p>Keeps the regular Enter key — used in comment sections or forums.</p>
+<h4>4.Step-by-Step Form</h4>
+<input type="text" placeholder="First Name" enterkeyhint="next">
+<input type="text" placeholder="Last Name" enterkeyhint="next">
+<input type="email" placeholder="Email Address" enterkeyhint="done">
+<p>"Next" key for moving forward and "Done" for completing form entry.</p>
+<h4>5.Search Field in Navigation App</h4>
+<input type="text" placeholder="Enter destination" enterkeyhint="go">
+<p>Useful in apps like Google Maps, where pressing "Go" should trigger navigation.</p>
+<h4>6.Email App</h4>
+<input type="text" placeholder="Write a subject..." enterkeyhint="next">
+<textarea placeholder="Write your email..." enterkeyhint="send"></textarea>
+<p>Helps users go from subject to body, then send the message directly from mobile keyboard.</p>
     <h1>3. autocapitalize</h1>
     <h1>3. autocapitalize</h1>
     <h1>3. autocapitalize</h1>
@@ -86,5 +150,6 @@
     <h1>3. autocapitalize</h1>
     <h1>3. autocapitalize</h1>
  </main>
+ <script src="/js/index.js"></script>
 </body>
 </html>
