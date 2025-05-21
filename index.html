@@ -271,7 +271,170 @@
     <p>The translate attribute in HTML is used to control whether the content of an element should be translated when the page is viewed in a browser or tool with automatic translation, like Google Translate or Microsoft Edge.</p>
     <element translate="yes">Translatable content</element>
 <element translate="no">Non-translatable content</element>
+<h2> All HTML Attributes Starting with “A” </h2>
+<h4>1. the accept Attribute</h4>
+<p>It tells the browser which file types the user is allowed to upload.</p>
+<h6>Photo Upload Form</h6>
+<form>
+  <label>Upload your profile photo:</label>
+  <input type="file" accept="image/*">
+</form>
+<h6>Document Submission (PDF only)</h6>
+<form>
+  <label>Upload your resume (PDF):</label>
+  <input type="file" accept=".pdf">
+</form>
+<h4>2. accept-charset</h4>
+<p>The accept-charset attribute defines which character encodings are accepted by the server when a <form> is submitted.</p>
+  <h6>Website Targeting Western Europe (ISO-8859-1)</h6>
+  <p>If the form is only meant for French, Spanish, or German users:  Characters like বাংলা, العربية, or emojis won't work well.</p>
+  <form action="/europe-login" accept-charset="ISO-8859-1">
+  <label>Name:</label>
+  <input type="text" name="name">
+</form>
+<h6>Multilingual Form (UTF-8 – recommended)</h6>
+<p>collecting input in English, Bangla, Arabic, and Japanese: UTF-8 supports ALL languages and emoji like 😊, so this is the most common and safe choice.</p>
+<form action="/submit" method="post" accept-charset="UTF-8">
+  <label>Your Name:</label>
+  <input type="text" name="username">
+  <button type="submit">Submit</button>
+</form>
+<h4>3.accesskey</h4>
+<p>see above</p>
+<h4>4.action Attribute</h4>
+<p>The action attribute is used with the <form> element. It defines the URL (web address) where the form data should be sent after the user submits the form. The form data is sent to the action URL using the HTTP method specified (usually GET or POST).</p>
+  <h6> E-commerce checkout form</h6>
+  <form action="/submit-order" method="post">
+  <input type="text" name="name" placeholder="Your Name">
+  <input type="text" name="address" placeholder="Shipping Address">
+  <button type="submit">Place Order</button>
+</form>
+<h6>Login Form</h6>
+<form action="/login" method="post">
+  <input type="text" name="username">
+  <input type="password" name="password">
+  <button type="submit">Log In</button>
+</form>
+<h4>5. allow Attribute</h4>
+<p>The allow attribute is mainly used with the <iframe> element to control permissions for the content inside the iframe. It tells the browser what features the iframe is allowed to use, such as camera, microphone, fullscreen, autoplay, etc.</p>
+  <h6>YouTube Video with Fullscreen and Autoplay</h6>
+  <iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/xyz"
+  allow="fullscreen; autoplay"
+  allowfullscreen>
+</iframe>
+<h6>Google Maps with Geolocation</h6>
+<iframe
+  src="https://maps.google.com/..."
+  allow="geolocation">
+</iframe>
+<h4>6. allowfullscreen</h4>
+<p>allowfullscreen is a Boolean attribute (meaning it’s either present or not) used on <iframe> and <video> elements to allow the content inside to enter fullscreen mode when requested. Without this attribute, users won't be able to expand embedded videos or other media content to fullscreen.</p>
+<h6>Embedding a YouTube Video</h6>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+  title="YouTube video player"
+  allowfullscreen>
+</iframe>
+<p>Now the fullscreen icon works.</p>
+<h4>7. alt Attribute</h4>
+<p>The alt (alternative text) attribute is used inside the <img> tag to describe the content or function of the image.</p>
+<h6>Product Image</h6>
+<img src="/image/Refrigerators1.jpg" alt="Refrigerator">
+<h4>8. async</h4>
+<p>The async attribute is used with the script tag in HTML to load external JavaScript files asynchronously.</p>
+<h6>Loading Maps or External Tools</h6>
+<script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+<p>If you load an embedded map or tool: The rest of the site loads while the map script is fetched.</p>
+<h4>9. autocapitalize</h4>
+<p>see above</p>
+<h4>10. autocomplete</h4>
+<p>The autocomplete attribute helps browsers predict and fill in form inputs automatically based on previously entered values or standard recognized data types. This makes form-filling faster and easier for users.</p>
+<h6>Simple login form with username and password</h6>
+<form action="/login" method="POST" autocomplete="on">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" autocomplete="username" required>
 
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" autocomplete="current-password" required>
+
+  <button type="submit">Log In</button>
+</form>
+<p>The browser recognizes personal info fields. Saves data so when user visits other forms with similar fields, it can prefill automatically.</p>
+<h4>11. autofocus attribute</h4>
+<p>The autofocus attribute is a boolean attribute used on certain HTML elements (mostly form controls).When present, it automatically sets keyboard focus on that element when the page or dialog loads. Only one element per page should have autofocus to avoid conflicts.It enhances user experience by letting users start typing or interacting immediately without clicking.</p>
+<h6>Login Page — Autofocus Username Field</h6>
+<form>
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" autofocus>
+  
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password">
+  
+  <button type="submit">Login</button>
+</form>
+<h4>12. autoplay</h4>
+<p>The autoplay attribute is a boolean attribute that you can add to <audio> and <video> elements.When present, it automatically starts playing the media as soon as it’s ready, without waiting for the user to click play.
+It does not require a value — just writing autoplay is enough.</p>
+<h6>Background Video on a Website</h6>
+<video autoplay muted loop playsinline>
+  <source src="background.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>Many modern websites use muted autoplay videos as dynamic backgrounds.muted is necessary to avoid autoplay blocking.loop makes the video repeat endlessly.playsinline prevents full-screen playback on mobile devices.</p>
+<h4>13. aria-* attributes</h4>
+<p>Purpose: Provide extra semantic information about UI elements to assistive technologies.They do not affect visual display but help users who rely on accessibility tools understand and interact with your site better.Used especially for custom widgets or interactive elements that don’t have built-in semantic meaning.</p>
+<h6>1. aria-label	Provide accessible label	Icon-only buttons</h6>
+<button aria-label="Close menu">
+  <svg><!-- close icon --></svg>
+</button>
+<p>What it does: Provides a text label for an element that may not have visible text.Use case: When a button or icon has no visible label but needs to be described.Screen readers will read "Close menu" when this button is focused, even though the button only shows an icon.</p>
+<h6>2. aria-labelledby	Reference visible label	Sections and regions</h6>
+<input type="text" aria-describedby="usernameHelp">
+<div id="usernameHelp">Your username must be 6-12 characters long.</div>
+<p>What it does: References the ID of another element that labels this one.Use case: When a visible label exists elsewhere on the page.Screen readers associate the heading "User Settings" with this region, giving context.</p>
+<h6>3. aria-hidden	Hide element from screen readers	Decorative icons</h6>
+<i class="icon-star" aria-hidden="true"></i>
+<p>What it does: Marks elements as hidden from assistive technologies.Use case: Hiding decorative elements or content not relevant to screen readers.The star icon is ignored by screen readers, reducing clutter.</p>
+<h6>4. aria-pressed	Toggle button state	Bold/italic toggle buttons</h6>
+<button aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'false' ? 'true' : 'false')">
+  Bold
+</button>
+<p>What it does: Indicates a toggle button's pressed state (true or false).Use case: Custom toggle buttons or switches.Screen readers announce whether the button is pressed or not.</p>
+<h6>5. aria-expanded	Show expanded/collapsed state	Dropdown menus, accordions</h6>
+<button aria-expanded="false" aria-controls="menu1" onclick="toggleMenu()">
+  Menu
+</button>
+<ul id="menu1" hidden>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+<p>What it does: Points to an element that describes the current element.Use case: Adding extra explanation or instructions.Screen readers read the help text after the input field.</p>
+<h6>6. aria-controls	Reference controlled element	Menus controlled by buttons</h6>
+<p>What it does: Indicates the ID of the element controlled by this element.Use case: When one element controls the visibility or content of another.Example: See above example with aria-expanded and aria-controls.</p>
+<h6>7. aria-describedby	Describe element with extra text	Inputs with help text</h6>
+<input type="text" aria-describedby="usernameHelp">
+<div id="usernameHelp">Your username must be 6-12 characters long.</div>
+<p>What it does: Points to an element that describes the current element.Use case: Adding extra explanation or instructions.Screen readers read the help text after the input field.</p>
+<h6>8. aria-live	Announce dynamic updates	Notifications, alerts</h6>
+<div aria-live="polite" id="notification"></div>
+<script>
+  document.getElementById('notification').textContent = 'Your message has been sent.';
+</script>
+<div aria-live="polite" id="notification"></div>
+<script>
+  document.getElementById('notification').textContent = 'Your message has been sent.';
+</script>
+<p>What it does: Announces dynamic content changes in live regions.Values: off, polite, assertive.Use case: For alerts or updates that happen without page reload.Screen readers announce the message politely (waiting until user is idle).</p>
+<h6>9. role	Define element role	Custom interactive elements</h6>
+<div role="button" tabindex="0" onclick="alert('Clicked!')">
+  Click me
+</div>
+<p>What it does: Defines the role of an element (like button, dialog, navigation).Use case: When using custom elements. Screen readers treat this div like a button.</p>
  </main>
  <script src="/js/index.js"></script>
 </body>
